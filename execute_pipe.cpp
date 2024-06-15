@@ -59,8 +59,6 @@ void execute_pipe(const std::string& input) {
                 c_args[k] = &args[k][0];
             }
 
-            c_args[args.size()] = nullptr;
-
             if(execvp(c_args[0], c_args.data()) < 0){
                 std::perror("execvp");
                 std::exit(EXIT_FAILURE);
